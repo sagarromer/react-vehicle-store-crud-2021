@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Heading from "./components/stateless/heading/Heading"
 import Cars from "./components/statefull/cars/Cars"
+import Button from "./components/stateless/button/Button"
 class App extends Component {
   render() {
     return (
@@ -8,7 +9,7 @@ class App extends Component {
 
         <Heading>vehicle center</Heading>
         <Cars></Cars>        
-        <button>Add</button>
+        <Button typebtn="btn-success w-100">Add</Button>
       </div>
     );
   }
