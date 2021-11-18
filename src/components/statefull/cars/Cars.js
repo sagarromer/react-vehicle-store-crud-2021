@@ -12,8 +12,16 @@ class Cars extends Component {
 
 
 
-    deleteCarHandler = () => {
+    deleteCarHandler = (id) => {
         console.log("you have clicked on the delete button");
+        const index = this.state.myCars.findIndex(index => {
+            return index.id === id;
+        })
+        const newCars = [...this.state.myCars];
+        newCars.splice(index,1);
+        this.setState({
+            myCars :newCars
+        })
         
     }
     editCarHandler = () => {
@@ -35,8 +43,8 @@ class Cars extends Component {
                     <tbody>
                         
                         {
-                            this.state.myCars.map((car) => {
-                                return (<Car brand={car.brand} color={car.color} price= {car.price} clicDel= {this.deleteCarHandler} 
+                            this.state.myCars.map((car,index) => {
+                                return (<Car brand={car.brand} color={car.color} price= {car.price} clicDel= {() => this.deleteCarHandler(index)} 
                                 clicEdit={this.editCarHandler} />)
                             })
                         }
