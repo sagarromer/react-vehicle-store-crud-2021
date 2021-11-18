@@ -1,11 +1,14 @@
-import React, { Component, Fragment } from 'react'
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import Heading from "./components/stateless/heading/Heading"
 
 class App extends Component {
   render() {
     return (
-      <div>
-        
+      <div className="container">
+
+        <Heading>vehicle center</Heading>
+        <h2>Cars</h2>
+        <button>Add</button>
       </div>
     );
   }
