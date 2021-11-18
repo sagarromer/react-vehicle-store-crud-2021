@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Heading from "./components/stateless/heading/Heading"
-import Cars from "./components/statefull/cars/Car"
+import Cars from "./components/statefull/cars/Cars"
 class App extends Component {
   render() {
     return (

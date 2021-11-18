@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-class Car extends Component {
+import Car from "../../../components/stateless/car/Car"
+class Cars extends Component {
     render() {
         return (
             <>
@@ -14,7 +14,7 @@ class Car extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {/* <tr>
                             <td>Toyota</td>
                             <td>black</td>
                             <td>{50000+" $"}</td>
@@ -37,7 +37,10 @@ class Car extends Component {
                             <td><button className="btn btn-warning">edit</button></td>
                             <td><button className="btn btn-danger">Delete</button></td>
                             
-                        </tr>
+                        </tr> */}
+                        <Car brand="Toyota" color="black" price= {5000}/>
+                        <Car brand="Mercedes" color="green" price= {30000}/>
+                        <Car brand="Mazda" color="red" price= {5000}/>
                     </tbody>
                 </table>   
             </>
@@ -45,4 +48,4 @@ class Car extends Component {
     }
 }
 
-export default Car
+export default Cars
