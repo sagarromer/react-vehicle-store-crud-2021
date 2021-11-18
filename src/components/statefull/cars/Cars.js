@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
 import Car from "../../../components/stateless/car/Car"
 class Cars extends Component {
+
+    state ={
+        myCars : [
+            {id : 1, brand : "Toyota", color: "black", price: 50000},
+            {id : 2, brand : "Mercedez", color: "green", price: 30000},
+            {id : 3, brand : "Mazda", color: "red", price: 20000},
+        ]
+    }
+
+
+
     deleteCarHandler = () => {
         console.log("you have clicked on the delete button");
         
@@ -22,38 +33,22 @@ class Cars extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* <tr>
-                            <td>Toyota</td>
-                            <td>black</td>
-                            <td>{50000+" $"}</td>
-                            <td><button className="btn btn-warning">edit</button></td>
-                            <td><button className="btn btn-danger">Delete</button></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Mercedes</td>
-                            <td>green</td>
-                            <td>{30000+" $"}</td>
-                            <td><button className="btn btn-warning">edit</button></td>
-                            <td><button className="btn btn-danger">Delete</button></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Mazda</td>
-                            <td>red</td>
-                            <td>{50000+" $"}</td>
-                            <td><button className="btn btn-warning">edit</button></td>
-                            <td><button className="btn btn-danger">Delete</button></td>
-                            
-                        </tr> */}
-                        <Car brand="Toyota" color="black" price= {5000} clicDel= {this.deleteCarHandler} 
+                        
+                        {
+                            this.state.myCars.map((car) => {
+                                return (<Car brand={car.brand} color={car.color} price= {car.price} clicDel= {this.deleteCarHandler} 
+                                clicEdit={this.editCarHandler} />)
+                            })
+                        }
+                        
+                        {/* <Car brand="Toyota" color="black" price= {5000} clicDel= {this.deleteCarHandler} 
                             clicEdit={this.editCarHandler} />
                         <Car brand="Mercedes" color="green" price= {30000} 
                             clicDel= {this.deleteCarHandler}
                             clicEdit={this.editCarHandler}/>
                         <Car brand="Mazda" color="red" price= {5000} 
                         clicDel= {this.deleteCarHandler}
-                        clicEdit={this.editCarHandler}/>
+                        clicEdit={this.editCarHandler}/> */}
                     </tbody>
                 </table>   
             </>
