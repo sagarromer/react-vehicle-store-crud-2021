@@ -5,7 +5,7 @@ const Button = (props) => {
     return (
         <>
             <td>
-                <button className={`btn ${props.typebtn}`}>
+                <button onClick={props.clic} className={`btn ${props.typebtn}`}>
                     {props.children}
                 </button>
             </td>

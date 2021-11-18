@@ -11,8 +11,8 @@ const Car = (props) => {
                 <td>{props.price+" $"}</td>
                 {/* <td><button className="btn btn-warning">edit</button></td>
                 <td><button className="btn btn-danger">Delete</button></td> */}
-                <Button typebtn="btn-warning">Edit</Button>
-                <Button typebtn="btn-danger">delete</Button>
+                <Button  clic= {props.clicEdit} typebtn="btn-warning">Edit</Button>
+                <Button clic= {props.clicDel} typebtn="btn-danger">delete</Button>
             </tr>
         </>
         

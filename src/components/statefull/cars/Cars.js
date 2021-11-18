@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import Car from "../../../components/stateless/car/Car"
 class Cars extends Component {
+    deleteCarHandler = () => {
+        console.log("you have clicked on the delete button");
+        
+    }
+    editCarHandler = () => {
+        console.log('you have clicked on edit button');
+        
+    }
     render() {
         return (
             <>
@@ -38,9 +46,14 @@ class Cars extends Component {
                             <td><button className="btn btn-danger">Delete</button></td>
                             
                         </tr> */}
-                        <Car brand="Toyota" color="black" price= {5000}/>
-                        <Car brand="Mercedes" color="green" price= {30000}/>
-                        <Car brand="Mazda" color="red" price= {5000}/>
+                        <Car brand="Toyota" color="black" price= {5000} clicDel= {this.deleteCarHandler} 
+                            clicEdit={this.editCarHandler} />
+                        <Car brand="Mercedes" color="green" price= {30000} 
+                            clicDel= {this.deleteCarHandler}
+                            clicEdit={this.editCarHandler}/>
+                        <Car brand="Mazda" color="red" price= {5000} 
+                        clicDel= {this.deleteCarHandler}
+                        clicEdit={this.editCarHandler}/>
                     </tbody>
                 </table>   
             </>
