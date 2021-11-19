@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Car from "../../../components/stateless/car/Car"
+import Formtoedit from "../form/formtoedit/Formtoedit"
 class Cars extends Component {
 
     state ={
@@ -7,7 +8,9 @@ class Cars extends Component {
             {id : 1, brand : "Toyota", color: "black", price: 50000},
             {id : 2, brand : "Mercedez", color: "green", price: 30000},
             {id : 3, brand : "Mazda", color: "red", price: 20000},
-        ]
+        ],
+        lastid : 3,
+        isDataEditing : 0
     }
 
 
@@ -44,8 +47,21 @@ class Cars extends Component {
                         
                         {
                             this.state.myCars.map((car,index) => {
-                                return (<Car brand={car.brand} color={car.color} price= {car.price} clicDel= {() => this.deleteCarHandler(index)} 
-                                clicEdit={this.editCarHandler} />)
+                                if(this.state.isDataEditing !== car.id){
+                                    return (<Car brand={car.brand} color={car.color} 
+                                        price= {car.price} 
+                                    clicDel= {() => this.deleteCarHandler(index)} 
+                                    clicEdit={() => this.setState({isDataEditing : car.id})} />)
+                                }else {
+                                    return <Formtoedit
+                                    key = {car.id}
+                                    id = {car.id}
+                                    brand = {car.brand}
+                                    color = {car.color}
+                                    price = {car.price}
+                                    />
+                                }
+                                
                             })
                         }
                         
