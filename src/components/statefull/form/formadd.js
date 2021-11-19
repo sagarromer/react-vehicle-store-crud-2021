@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Formtitle from "../../../components/stateless/formtitle/formtitle"
 import Button from "../../../components/stateless/button/Button"
+import Fade from 'react-reveal/Fade'
+
 class formadd extends Component {
 
     state = {
@@ -17,6 +19,7 @@ class formadd extends Component {
         return (
             <>
                 <Formtitle>Add car</Formtitle>
+                <Fade top cascade>
                 <form>
                     <div className="form-group">
                         <label>brand</label>
@@ -43,6 +46,8 @@ class formadd extends Component {
                         <Button clic = {this.validationHandler} className="btn btn-primary">validate</Button>
                                             </div>
                 </form>
+                </Fade>
+                
             </>
         )
     }

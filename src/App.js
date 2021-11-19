@@ -3,6 +3,8 @@ import Heading from "./components/stateless/heading/Heading"
 import Cars from "./components/statefull/cars/Cars"
 import Button from "./components/stateless/button/Button"
 import Formadd from "./components/statefull/form/formadd"
+import Zoom from 'react-reveal/Zoom'
+
 class App extends Component {
 
   state = {
@@ -17,11 +19,13 @@ class App extends Component {
         {
           this.state.isFormOpen && <Formadd />
         }      
+        <Zoom>
         <Button clic = {
           () => this.setState((prevState) => ({isFormOpen : !prevState.isFormOpen}))
         } typebtn="btn-success w-100">
           {this.state.isFormOpen ? "close" : "Add"}
         </Button>
+        </Zoom>
       </div>
     );
   }

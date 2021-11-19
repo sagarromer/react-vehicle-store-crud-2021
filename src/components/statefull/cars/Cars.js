@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Car from "../../../components/stateless/car/Car"
 import Formtoedit from "../form/formtoedit/Formtoedit"
+import Fade from 'react-reveal/Fade'
+
 class Cars extends Component {
 
     state ={
@@ -53,7 +55,7 @@ class Cars extends Component {
     }
     render() {
         return (
-            <>
+            <>  <Fade>
                 <table className="table text-center">
                     <thead>
                         <tr>
@@ -96,6 +98,7 @@ class Cars extends Component {
                         clicEdit={this.editCarHandler}/> */}
                     </tbody>
                 </table>   
+                </Fade>
             </>
         )
     }
