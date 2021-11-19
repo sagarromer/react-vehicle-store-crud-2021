@@ -12,6 +12,25 @@ class Cars extends Component {
         lastid : 3,
         isDataEditing : 0
     }
+    updateCarHandler = (id, brand, color, price) => {
+        const index = this.state.myCars.findIndex(
+            index => {
+                return index.id === id
+            }
+        )
+        const newCar = {
+            id, 
+            brand, 
+            color,
+            price 
+        }
+        const newCars = [...this.state.myCars];
+        newCars[index] = newCar;
+
+        this.setState({
+            myCars : newCars
+        })
+    }
 
 
 
@@ -23,7 +42,8 @@ class Cars extends Component {
         const newCars = [...this.state.myCars];
         newCars.splice(index,1);
         this.setState({
-            myCars :newCars
+            myCars :newCars,
+            isDataEditing : 0
         })
         
     }
@@ -59,6 +79,7 @@ class Cars extends Component {
                                     brand = {car.brand}
                                     color = {car.color}
                                     price = {car.price}
+                                    updateCar = {this.updateCarHandler}
                                     />
                                 }
                                 

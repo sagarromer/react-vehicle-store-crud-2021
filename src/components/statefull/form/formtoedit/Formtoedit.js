@@ -7,6 +7,11 @@ class formtoedit extends Component {
         color : this.props.color,
         price : this.props.price
     }
+    updateValidationHandler = () => {
+        console.log('updation validation running');
+        this.props.updateCar(this.props.id, this.state.brand, this.state.color, this.state.price);
+        
+    }
     render() {
         return (
             <>
@@ -17,6 +22,7 @@ class formtoedit extends Component {
                     onChange={event => this.setState({color : event?.target.value})}/></td>
                     <td><input className="form-control" type="text" value={this.state.price}
                     onChange={event => this.setState({price : event?.target.value})}/></td>                
+                    <td><Button clic={this.updateValidationHandler} typebtn="btn-warning">update</Button></td>
                 </tr>
             </>
         )
